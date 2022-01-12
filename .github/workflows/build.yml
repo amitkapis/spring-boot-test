@@ -34,4 +34,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amitkapis_spring-boot-test
-      - run: curl -X POST -H 'Content-type:application/json' --data '{"text":"This is a test!"}' "https://sonarcloud.io/project/overview?id=amitkapis_spring-boot-test >result.json"           
+      - name: Sonar Results
+        run: curl -X POST -H 'Content-type:application/json' --data '{"text":"This is a test!"}' "https://sonarcloud.io/project/overview?id=amitkapis_spring-boot-test >result.json"           
