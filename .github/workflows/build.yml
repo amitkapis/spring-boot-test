@@ -35,7 +35,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amitkapis_spring-boot-test
       - name: SonarQube Quality Gate check
-        uses: amitkapis/spring-boot-test@main
+        uses: actions/checkout@v2
         with:
          scanMetadataReportFile: target/sonar/report-task.txt
         # Force to fail step after specific time
