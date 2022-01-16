@@ -36,6 +36,8 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amitkapis_spring-boot-test
       - name: SonarQube Quality Gate check
         uses: amitkapis/spring-boot-test@main
+        with:
+         scanMetadataReportFile: target/sonar/report-task.txt
         # Force to fail step after specific time
         timeout-minutes: 5
         env:
