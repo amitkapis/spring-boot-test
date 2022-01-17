@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request:  # Trying to run pull request
     types: [opened, synchronize, reopened]
 jobs:
   build:
